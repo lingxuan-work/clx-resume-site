@@ -4,154 +4,135 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>崔羚炫 · Technical HRBP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#fafaf8;
-    --card:#ffffff;
-    --border:#eaeae4;
-    --border-soft:#f0f0ec;
-    --accent:#0ea472;
-    --accent-soft:#e6f6ef;
-    --accent-blue:#3b82f6;
-    --text:#22262b;
-    --text-dim:#6b7280;
-    --text-faint:#9ca3af;
+    --bg:#fdfbf7;
+    --bg-soft:#faeeeb;
+    --ink:#1f1e1b;
+    --ink-soft:#44403c;
+    --muted:#8a8378;
+    --hair:#e7ded2;
+    --terracotta:#c55344;
+    --terracotta-soft:#fff3ef;
+    --sage:#40815b;
+    --gold:#c98a3e;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;
     background:var(--bg);
-    color:var(--text);
-    font-family:"Inter","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
-    line-height:1.75;
-    font-weight:400;
+    color:var(--ink-soft);
+    font-family:"Inter","Noto Sans SC",sans-serif;
+    font-weight:300;
+    line-height:1.9;
     -webkit-font-smoothing:antialiased;
   }
+  .serif{ font-family:"Cormorant Garamond","Noto Serif SC",serif; }
+  .signature{ font-family:"Great Vibes", cursive; }
 
-  .wrap{ max-width:860px; margin:0 auto; padding:0 24px; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 28px; }
 
   /* NAV */
-  nav{
-    position:sticky; top:0; z-index:10;
-    background:rgba(250,250,248,0.85);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border-soft);
-  }
-  .nav-inner{ max-width:860px; margin:0 auto; padding:18px 24px; display:flex; justify-content:space-between; align-items:center; }
-  .brand{ font-weight:600; letter-spacing:0.2px; color:var(--text); font-size:14.5px; }
-  .brand span{ color:var(--accent); }
-  .nav-links{ display:flex; gap:28px; }
-  .nav-links a{ color:var(--text-dim); text-decoration:none; font-size:13px; letter-spacing:0.2px; transition:color .2s; }
-  .nav-links a:hover{ color:var(--accent); }
+  nav{ position:sticky; top:0; z-index:10; background:rgba(253,251,247,0.82); backdrop-filter:blur(8px); }
+  .nav-inner{ max-width:760px; margin:0 auto; padding:26px 28px; display:flex; justify-content:space-between; align-items:center; }
+  .brand{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:19px; font-weight:500; color:var(--ink); letter-spacing:0.5px; }
+  .brand em{ color:var(--terracotta); font-style:italic; }
+  .nav-links{ display:flex; gap:30px; }
+  .nav-links a{ color:var(--muted); text-decoration:none; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; transition:color .25s; }
+  .nav-links a:hover{ color:var(--terracotta); }
 
   /* HERO */
-  .hero{ padding:100px 0 70px; }
-  .hero-tag{
-    display:inline-flex; align-items:center; gap:6px; font-size:12px; letter-spacing:1.2px; color:var(--accent);
-    padding:5px 13px; border-radius:999px; margin-bottom:28px; text-transform:uppercase;
-    background:var(--accent-soft); font-weight:600;
-  }
-  .hero-tag::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block; }
+  .hero{ padding:130px 0 110px; text-align:center; }
+  .hero .kicker{ font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:30px; }
+  .hero .kicker::before, .hero .kicker::after{ content:"— "; color:var(--terracotta); }
+  .hero .kicker::after{ content:" —"; }
   .hero h1{
-    font-size:46px; margin:0 0 16px; font-weight:700; letter-spacing:-0.5px; color:var(--text);
+    font-family:"Great Vibes", cursive; font-size:96px; font-weight:400; color:var(--ink);
+    margin:0 0 6px; line-height:1; letter-spacing:1px;
   }
-  .hero p.role{ font-size:16.5px; color:var(--text-dim); margin:0 0 34px; max-width:520px; font-weight:400; }
-  .hero p.role b{ color:var(--text); font-weight:600; }
-  .hero-links{ display:flex; gap:12px; flex-wrap:wrap; }
+  .hero .role{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-style:italic; font-size:22px; color:var(--ink-soft); margin:18px 0 40px; font-weight:400; }
+  .hero .role b{ color:var(--terracotta); font-style:normal; font-weight:500; }
+  .hero-links{ display:flex; gap:18px; justify-content:center; }
   .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 22px; border-radius:10px; font-size:13.5px; text-decoration:none; font-weight:500;
-    border:1px solid var(--border); color:var(--text); transition:all .18s;
+    display:inline-flex; align-items:center; gap:8px; padding:11px 26px; border-radius:2px;
+    font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none;
+    border:1px solid var(--ink); color:var(--ink); transition:all .25s;
   }
-  .btn.primary{ background:var(--accent); color:#fff; border:none; }
-  .btn:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
-  .btn.primary:hover{ background:#0c8f62; color:#fff; }
+  .btn.primary{ background:var(--terracotta); color:#fff; border-color:var(--terracotta); }
+  .btn:hover{ background:var(--ink); color:#fff; }
+  .btn.primary:hover{ background:#a8402f; border-color:#a8402f; }
 
   /* SECTION */
-  section{ padding:56px 0; border-top:1px solid var(--border-soft); }
-  .section-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:30px; }
-  .section-num{ font-size:12.5px; color:var(--accent); font-family:monospace; font-weight:600; }
-  .section-title{ font-size:21px; font-weight:700; color:var(--text); letter-spacing:-0.2px; }
+  section{ padding:70px 0; }
+  .divider{ text-align:center; color:var(--hair); font-size:20px; letter-spacing:14px; }
+  .section-head{ text-align:center; margin-bottom:48px; }
+  .section-head .num{ display:block; font-size:12px; letter-spacing:3px; color:var(--muted); margin-bottom:10px; text-transform:uppercase; }
+  .section-head .title{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:32px; font-weight:500; color:var(--ink); font-style:italic; }
 
   /* ABOUT */
-  .about-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
-  .strength-card{
-    background:var(--card); border:1px solid var(--border); border-radius:14px;
-    padding:20px 22px; transition:border-color .2s, box-shadow .2s;
-  }
-  .strength-card:hover{ border-color:#c9ede0; box-shadow:0 4px 18px rgba(14,164,114,0.08); }
-  .strength-card b{ color:var(--text); display:block; margin-bottom:5px; font-size:14.5px; font-weight:600; }
-  .strength-card b::before{ content:"— "; color:var(--accent); }
-  .strength-card p{ margin:0; color:var(--text-dim); font-size:13.5px; }
+  .about-grid{ display:flex; flex-direction:column; gap:0; }
+  .strength-row{ padding:22px 0; border-bottom:1px solid var(--hair); display:flex; gap:20px; }
+  .strength-row:last-child{ border-bottom:none; }
+  .strength-row .mark{ font-family:"Cormorant Garamond",serif; font-style:italic; font-size:22px; color:var(--terracotta); flex-shrink:0; width:26px; }
+  .strength-row b{ display:block; color:var(--ink); font-size:15.5px; font-weight:500; margin-bottom:5px; font-family:"Cormorant Garamond","Noto Serif SC",serif; }
+  .strength-row p{ margin:0; color:var(--muted); font-size:13.5px; line-height:1.85; }
 
-  /* EDU + SKILLS grid */
-  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-  @media (max-width:720px){ .two-col{ grid-template-columns:1fr; } }
-  .info-card{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:24px; }
-  .info-card h4{ margin:0 0 16px; font-size:12.5px; color:var(--text-faint); letter-spacing:1.2px; text-transform:uppercase; font-weight:600; }
+  /* EDU + SKILLS */
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:20px; }
+  @media (max-width:640px){ .two-col{ grid-template-columns:1fr; gap:36px; } }
+  .info-card h4{ margin:0 0 18px; font-size:12px; color:var(--terracotta); letter-spacing:2px; text-transform:uppercase; font-weight:500; }
   .edu-row{ margin-bottom:16px; }
-  .edu-row:last-child{ margin-bottom:0; }
-  .edu-row .school{ font-weight:600; color:var(--text); font-size:14.5px; }
-  .edu-row .detail{ font-size:12.5px; color:var(--text-dim); margin-top:2px; }
-  .tags{ display:flex; flex-wrap:wrap; gap:8px; }
-  .tag{
-    font-size:12px; padding:6px 12px; border-radius:8px;
-    background:var(--accent-soft); color:var(--accent); font-weight:500;
-  }
-  .skill-line{ margin-bottom:11px; font-size:13px; color:var(--text-dim); }
-  .skill-line:last-child{ margin-bottom:0; }
-  .skill-line b{ color:var(--text); font-weight:600; }
+  .edu-row .school{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-weight:600; color:var(--ink); font-size:16px; }
+  .edu-row .detail{ font-size:12.5px; color:var(--muted); margin-top:2px; }
+  .tags{ display:flex; flex-wrap:wrap; gap:9px; margin-top:6px; }
+  .tag{ font-size:12px; padding:5px 3px; color:var(--ink-soft); position:relative; }
+  .tag::after{ content:"·"; color:var(--hair); margin-left:9px; }
+  .tag:last-child::after{ content:""; }
+  .skill-line{ margin-bottom:12px; font-size:13px; color:var(--muted); }
+  .skill-line b{ color:var(--ink); font-weight:500; font-family:"Cormorant Garamond","Noto Serif SC",serif; }
 
-  /* TIMELINE / EXPERIENCE */
-  .entry{
-    background:var(--card); border:1px solid var(--border); border-radius:16px;
-    padding:28px 30px; margin-bottom:20px;
-  }
-  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--border-soft); }
-  .entry-org{ font-size:16.5px; font-weight:700; color:var(--text); }
-  .entry-role{ font-size:12.5px; color:var(--accent); margin-left:10px; font-weight:500; }
-  .entry-date{ font-size:12px; color:var(--text-faint); font-family:monospace; }
-  .entry ul{ margin:0; padding-left:0; list-style:none; }
-  .entry li{ font-size:13.5px; color:var(--text-dim); margin-bottom:12px; padding-left:20px; position:relative; }
+  /* ENTRY / TIMELINE */
+  .entry{ padding:34px 0; border-top:1px solid var(--hair); }
+  .entry:first-child{ border-top:none; }
+  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px; margin-bottom:18px; }
+  .entry-org{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:21px; font-weight:600; color:var(--ink); }
+  .entry-role{ font-size:12px; color:var(--terracotta); margin-left:10px; letter-spacing:0.5px; }
+  .entry-date{ font-size:12px; color:var(--muted); font-style:italic; font-family:"Cormorant Garamond",serif; }
+  .entry ul{ margin:0; padding:0; list-style:none; }
+  .entry li{ font-size:13.5px; color:var(--ink-soft); margin-bottom:14px; padding-left:22px; position:relative; line-height:1.85; }
   .entry li:last-child{ margin-bottom:0; }
-  .entry li::before{ content:"·"; position:absolute; left:4px; top:0; color:var(--accent); font-weight:700; font-size:18px; }
-  .entry li b{ color:var(--text); font-weight:600; }
-  .entry li .num{ color:var(--accent); font-weight:700; }
+  .entry li::before{ content:"❀"; position:absolute; left:0; top:1px; color:var(--terracotta); font-size:11px; }
+  .entry li b{ color:var(--ink); font-weight:500; }
+  .entry li .num{ color:var(--terracotta); font-weight:600; font-style:italic; font-family:"Cormorant Garamond",serif; }
 
   /* PAPERS */
-  .paper-card{
-    background:var(--card); border:1px solid var(--border); border-radius:14px;
-    padding:22px 24px; margin-bottom:14px;
-  }
-  .paper-title{ font-size:14.5px; font-weight:700; color:var(--text); margin-bottom:8px; }
-  .paper-meta{ font-size:12.5px; color:var(--text-dim); margin-top:5px; }
-  .badge{
-    display:inline-block; font-size:11px; font-weight:700; padding:3px 10px; border-radius:6px;
-    background:var(--accent-soft); color:var(--accent); margin-left:6px;
-  }
-  .badge.gray{ background:#f1f1ee; color:var(--text-dim); }
+  .paper-card{ padding:26px 0; border-top:1px solid var(--hair); }
+  .paper-card:first-child{ border-top:none; }
+  .paper-title{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:17px; font-weight:600; color:var(--ink); margin-bottom:8px; font-style:italic; }
+  .paper-meta{ font-size:12.5px; color:var(--muted); margin-top:6px; }
+  .badge{ display:inline-block; font-size:10.5px; font-weight:600; padding:2px 10px; border:1px solid var(--terracotta); color:var(--terracotta); margin-left:8px; letter-spacing:0.5px; }
+  .badge.gray{ border-color:var(--hair); color:var(--muted); }
 
   /* HONORS */
-  .honor-row{ display:flex; gap:14px; flex-wrap:wrap; }
-  .honor-pill{
-    background:var(--card); border:1px solid var(--border); border-radius:12px;
-    padding:15px 22px; font-size:13.5px; color:var(--text); display:flex; align-items:center; gap:10px; font-weight:500;
-  }
-  .honor-pill .icon{ color:var(--accent); font-size:15px; }
+  .honor-row{ display:flex; gap:0; flex-wrap:wrap; justify-content:center; }
+  .honor-pill{ padding:16px 30px; font-size:13.5px; color:var(--ink-soft); text-align:center; }
+  .honor-pill .icon{ display:block; color:var(--terracotta); font-size:18px; margin-bottom:8px; }
 
   /* FOOTER */
-  footer{ padding:50px 0 70px; text-align:center; }
-  footer .contact-row{ display:flex; justify-content:center; gap:28px; flex-wrap:wrap; margin-bottom:22px; }
-  footer .contact-row a, footer .contact-row span{ color:var(--text-dim); font-size:13.5px; text-decoration:none; }
-  footer .contact-row a:hover{ color:var(--accent); }
-  footer .copyright{ color:var(--text-faint); font-size:11.5px; }
+  footer{ padding:60px 0 90px; text-align:center; }
+  footer .sign{ font-family:"Great Vibes", cursive; font-size:38px; color:var(--terracotta); margin-bottom:24px; }
+  footer .contact-row{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-bottom:26px; }
+  footer .contact-row a, footer .contact-row span{ color:var(--muted); font-size:13px; text-decoration:none; letter-spacing:0.3px; }
+  footer .contact-row a:hover{ color:var(--terracotta); }
+  footer .copyright{ color:var(--hair); font-size:11px; letter-spacing:1px; }
 
   @media (max-width:600px){
-    .hero h1{ font-size:34px; }
-    .entry{ padding:20px; }
-    .nav-links{ gap:14px; }
-    .nav-links a{ font-size:11.5px; }
+    .hero h1{ font-size:64px; }
+    .hero .role{ font-size:17px; }
+    .entry-org{ font-size:18px; }
   }
 </style>
 </head>
@@ -159,9 +140,9 @@
 
 <nav>
   <div class="nav-inner">
-    <div class="brand">崔羚炫 <span>·</span> Technical HRBP</div>
+    <div class="brand">崔羚炫 <em>·</em> HRBP</div>
     <div class="nav-links">
-      <a href="#about">关于我</a>
+      <a href="#about">关于</a>
       <a href="#experience">经历</a>
       <a href="#projects">项目</a>
       <a href="#papers">学术</a>
@@ -173,43 +154,47 @@
 <div class="wrap">
 
   <section class="hero" id="top">
-    <div class="hero-tag">Technical Recruiter · HRBP</div>
-    <h1>崔羚炫</h1>
-    <p class="role">用<b>技术背景 + AI工具</b>做招聘的HRBP · 计算机硕士 · 第一作者 IEEE TKDE</p>
+    <div class="kicker">Technical Recruiter</div>
+    <h1>Cui Lingxuan</h1>
+    <p class="role">用<b>技术背景 + AI工具</b>做招聘的 HRBP</p>
     <div class="hero-links">
       <a class="btn primary" href="#contact">联系我</a>
-      <a class="btn" href="#experience">查看经历 →</a>
+      <a class="btn" href="#experience">查看经历</a>
     </div>
   </section>
+
+  <div class="divider">· · ·</div>
 
   <section id="about">
-    <div class="section-head"><span class="section-num">01</span><span class="section-title">个人优势</span></div>
+    <div class="section-head"><span class="num">Profile</span><span class="title">个人优势</span></div>
     <div class="about-grid">
-      <div class="strength-card">
-        <b>技术背景加持技术团队招聘</b>
-        <p>计算机硕士，第一作者发表 IEEE TKDE 顶刊论文并深度参与 VLM 科研项目，能精准读懂算法/研发类 JD 背后的真实需求、快速判断候选人技术深度，匹配效率优于传统 HR</p>
+      <div class="strength-row">
+        <div class="mark">I</div>
+        <div><b>技术背景加持技术团队招聘</b><p>计算机硕士，第一作者发表 IEEE TKDE 顶刊论文并深度参与 VLM 科研项目，能精准读懂算法/研发类 JD 背后的真实需求、快速判断候选人技术深度，匹配效率优于传统 HR</p></div>
       </div>
-      <div class="strength-card">
-        <b>上手快、成长快</b>
-        <p>入职一周即可独立负责大模型公司核心岗位社招全流程（寻访-面试-谈薪-Offer撮合），并持续跟随 HRBP leader 深入学习员工关系、编制规划等 HRBP 工作</p>
+      <div class="strength-row">
+        <div class="mark">II</div>
+        <div><b>上手快、成长快</b><p>入职一周即可独立负责大模型公司核心岗位社招全流程（寻访-面试-谈薪-Offer撮合），并持续跟随 HRBP leader 深入学习员工关系、编制规划等 HRBP 工作</p></div>
       </div>
-      <div class="strength-card">
-        <b>主动寻访与谈薪能力扎实</b>
-        <p>Cold Call 陌生开发经验丰富，独立完成候选人薪酬谈判与 Offer 撮合，有效补充被动招聘渠道的不足</p>
+      <div class="strength-row">
+        <div class="mark">III</div>
+        <div><b>主动寻访与谈薪能力扎实</b><p>Cold Call 陌生开发经验丰富，独立完成候选人薪酬谈判与 Offer 撮合，有效补充被动招聘渠道的不足</p></div>
       </div>
-      <div class="strength-card">
-        <b>擅长用AI工具反哺HR效率</b>
-        <p>独立开发接入大模型的简历初筛工具与 HRBP 自动化数据看板，替代人工手动筛选、导表的低效模式</p>
+      <div class="strength-row">
+        <div class="mark">IV</div>
+        <div><b>擅长用AI工具反哺HR效率</b><p>独立开发接入大模型的简历初筛工具与 HRBP 自动化数据看板，替代人工手动筛选、导表的低效模式</p></div>
       </div>
-      <div class="strength-card">
-        <b>多元渠道挖掘被动候选人</b>
-        <p>善于利用 Google Scholar、GitHub、ArXiv 等渠道，精准定位技术背景匹配的被动候选人，弥补传统招聘渠道对高端/稀缺人才覆盖不足的短板</p>
+      <div class="strength-row">
+        <div class="mark">V</div>
+        <div><b>多元渠道挖掘被动候选人</b><p>善于利用 Google Scholar、GitHub、ArXiv 等渠道，精准定位技术背景匹配的被动候选人，弥补传统招聘渠道对高端/稀缺人才覆盖不足的短板</p></div>
       </div>
     </div>
   </section>
 
+  <div class="divider">· · ·</div>
+
   <section id="background">
-    <div class="section-head"><span class="section-num">02</span><span class="section-title">教育 & 能力</span></div>
+    <div class="section-head"><span class="num">Foundation</span><span class="title">教育 & 能力</span></div>
     <div class="two-col">
       <div class="info-card">
         <h4>教育背景</h4>
@@ -228,25 +213,27 @@
         <div class="skill-line"><b>AI相关：</b>PyTorch、深度学习、VLM/大模型微调（LoRA、Prompt Tuning）</div>
         <div class="skill-line"><b>AI工具落地：</b>Claude Code、大模型API调用与应用搭建</div>
       </div>
-      <div class="info-card" style="grid-column:1 / -1;">
-        <h4>HR专业知识</h4>
-        <div class="tags">
-          <span class="tag">招聘全流程</span>
-          <span class="tag">人才寻访/Cold Call</span>
-          <span class="tag">人才画像/JD</span>
-          <span class="tag">结构化面试</span>
-          <span class="tag">招聘漏斗分析</span>
-          <span class="tag">组织发展OD</span>
-          <span class="tag">员工关系</span>
-          <span class="tag">薪酬绩效基础</span>
-          <span class="tag">劳动法规</span>
-        </div>
+    </div>
+    <div class="info-card">
+      <h4>HR专业知识</h4>
+      <div class="tags">
+        <span class="tag">招聘全流程</span>
+        <span class="tag">人才寻访/Cold Call</span>
+        <span class="tag">人才画像/JD</span>
+        <span class="tag">结构化面试</span>
+        <span class="tag">招聘漏斗分析</span>
+        <span class="tag">组织发展OD</span>
+        <span class="tag">员工关系</span>
+        <span class="tag">薪酬绩效基础</span>
+        <span class="tag">劳动法规</span>
       </div>
     </div>
   </section>
 
+  <div class="divider">· · ·</div>
+
   <section id="experience">
-    <div class="section-head"><span class="section-num">03</span><span class="section-title">实习经历</span></div>
+    <div class="section-head"><span class="num">Journey</span><span class="title">实习经历</span></div>
     <div class="entry">
       <div class="entry-head">
         <div><span class="entry-org">Stable AI</span><span class="entry-role">HR实习生 · 社招/技术招聘方向</span></div>
@@ -262,22 +249,26 @@
     </div>
   </section>
 
+  <div class="divider">· · ·</div>
+
   <section id="papers">
-    <div class="section-head"><span class="section-num">04</span><span class="section-title">学术成果</span></div>
+    <div class="section-head"><span class="num">Research</span><span class="title">学术成果</span></div>
     <div class="paper-card">
       <div class="paper-title">A Dual Correction Guarantee Mechanism for Numerical Label Noise</div>
-      <div class="paper-meta">第一作者 · 已发表于 <b style="color:#22262b;">IEEE Transactions on Knowledge and Data Engineering（IEEE TKDE）</b><span class="badge">影响因子 10.4</span></div>
+      <div class="paper-meta">第一作者 · 已发表于 <b style="color:var(--ink);">IEEE Transactions on Knowledge and Data Engineering（IEEE TKDE）</b><span class="badge">影响因子 10.4</span></div>
       <div class="paper-meta">JCR一区 · CCF-A类 · 数据挖掘 / 知识工程领域国际顶级期刊</div>
       <div class="paper-meta">研究方向：面向数值标签噪声的双重校正保障机制，结合原型近邻邻域识别与异方差损失贝叶斯神经网络协同训练，在多个数据集上达到SOTA性能</div>
     </div>
     <div class="paper-card">
       <div class="paper-title">Dynamic Numerical Label Correction Driven by Estimation Uncertainty</div>
-      <div class="paper-meta">第一作者 · 在投 <b style="color:#22262b;">ACM Transactions on Knowledge Discovery from Data（TKDD）</b><span class="badge gray">CCF-B</span></div>
+      <div class="paper-meta">第一作者 · 在投 <b style="color:var(--ink);">ACM Transactions on Knowledge Discovery from Data（TKDD）</b><span class="badge gray">CCF-B</span></div>
     </div>
   </section>
 
+  <div class="divider">· · ·</div>
+
   <section id="projects">
-    <div class="section-head"><span class="section-num">05</span><span class="section-title">项目经历</span></div>
+    <div class="section-head"><span class="num">Work</span><span class="title">项目经历</span></div>
     <div class="entry">
       <div class="entry-head">
         <div><span class="entry-org">基于视觉语言模型的图像回归数据标注质检模块开发</span><span class="entry-role">科研项目</span></div>
@@ -288,10 +279,6 @@
         <li>深入参与VLM从数据构建、预训练到微调评测的完整技术链路，能够精准识别VLM/多模态算法岗位候选人的核心能力要求，为技术招聘提供专业判断依据</li>
       </ul>
     </div>
-  </section>
-
-  <section id="ai-tools">
-    <div class="section-head"><span class="section-num">06</span><span class="section-title">AI提效工具</span></div>
     <div class="entry">
       <div class="entry-head">
         <div><span class="entry-org">AI赋能招聘效率工具矩阵</span><span class="entry-role">独立开发（HR效率工具）</span></div>
@@ -305,22 +292,24 @@
     </div>
   </section>
 
+  <div class="divider">· · ·</div>
+
   <section id="honors">
-    <div class="section-head"><span class="section-num">07</span><span class="section-title">荣誉奖项</span></div>
+    <div class="section-head"><span class="num">Honors</span><span class="title">荣誉奖项</span></div>
     <div class="honor-row">
-      <div class="honor-pill"><span class="icon">✦</span>2025-2026学年三等学业奖学金</div>
-      <div class="honor-pill"><span class="icon">✦</span>2024-2025学年山西大学足球比赛第四名</div>
+      <div class="honor-pill"><span class="icon">❀</span>2025-2026学年<br>三等学业奖学金</div>
+      <div class="honor-pill"><span class="icon">❀</span>2024-2025学年<br>山西大学足球比赛第四名</div>
     </div>
   </section>
 
   <footer id="contact">
-    <div class="section-head" style="justify-content:center;"><span class="section-title">联系我</span></div>
+    <div class="sign">Lingxuan</div>
     <div class="contact-row">
-      <a href="tel:18535679952">📞 18535679952</a>
-      <a href="mailto:18535679952@163.com">✉️ 18535679952@163.com</a>
-      <span>📍 北京</span>
+      <a href="tel:18535679952">18535679952</a>
+      <a href="mailto:18535679952@163.com">18535679952@163.com</a>
+      <span>北京</span>
     </div>
-    <div class="copyright">© 2026 崔羚炫 · Built with Claude Code</div>
+    <div class="copyright">© 2026 崔羚炫</div>
   </footer>
 
 </div>
