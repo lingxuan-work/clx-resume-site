@@ -6,15 +6,16 @@
 <title>崔羚炫 · Technical HRBP</title>
 <style>
   :root{
-    --bg:#070a12;
-    --bg-soft:#0d1220;
-    --card:#101828;
-    --card-border:#1e2a40;
-    --cyan:#5eead4;
-    --violet:#a78bfa;
-    --text:#dbe4f0;
-    --text-dim:#7c8aa3;
-    --text-faint:#4b5670;
+    --bg:#fafaf8;
+    --card:#ffffff;
+    --border:#eaeae4;
+    --border-soft:#f0f0ec;
+    --accent:#0ea472;
+    --accent-soft:#e6f6ef;
+    --accent-blue:#3b82f6;
+    --text:#22262b;
+    --text-dim:#6b7280;
+    --text-faint:#9ca3af;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -23,159 +24,138 @@
     background:var(--bg);
     color:var(--text);
     font-family:"Inter","PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
-    line-height:1.7;
-    overflow-x:hidden;
+    line-height:1.75;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
   }
 
-  /* animated grid + glow background */
-  .bg-grid{
-    position:fixed; inset:0; z-index:0;
-    background-image:
-      linear-gradient(rgba(94,234,212,0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(94,234,212,0.055) 1px, transparent 1px);
-    background-size:44px 44px;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
-  }
-  .bg-glow{
-    position:fixed; z-index:0; pointer-events:none; filter:blur(80px); opacity:0.35;
-  }
-  .bg-glow.one{ top:-10%; left:-10%; width:45vw; height:45vw; background:var(--violet); border-radius:50%; }
-  .bg-glow.two{ top:30%; right:-15%; width:50vw; height:50vw; background:var(--cyan); border-radius:50%; opacity:0.18; }
-
-  .wrap{ position:relative; z-index:1; max-width:920px; margin:0 auto; padding:0 24px; }
+  .wrap{ max-width:860px; margin:0 auto; padding:0 24px; }
 
   /* NAV */
   nav{
     position:sticky; top:0; z-index:10;
-    backdrop-filter:blur(14px);
-    background:rgba(7,10,18,0.72);
-    border-bottom:1px solid rgba(94,234,212,0.12);
+    background:rgba(250,250,248,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
   }
-  .nav-inner{ max-width:920px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
-  .brand{ font-weight:700; letter-spacing:0.5px; color:var(--text); font-size:15px; }
-  .brand span{ color:var(--cyan); }
-  .nav-links{ display:flex; gap:22px; }
-  .nav-links a{ color:var(--text-dim); text-decoration:none; font-size:13px; letter-spacing:0.3px; transition:color .2s; }
-  .nav-links a:hover{ color:var(--cyan); }
+  .nav-inner{ max-width:860px; margin:0 auto; padding:18px 24px; display:flex; justify-content:space-between; align-items:center; }
+  .brand{ font-weight:600; letter-spacing:0.2px; color:var(--text); font-size:14.5px; }
+  .brand span{ color:var(--accent); }
+  .nav-links{ display:flex; gap:28px; }
+  .nav-links a{ color:var(--text-dim); text-decoration:none; font-size:13px; letter-spacing:0.2px; transition:color .2s; }
+  .nav-links a:hover{ color:var(--accent); }
 
   /* HERO */
-  .hero{ padding:110px 0 80px; text-align:center; }
+  .hero{ padding:100px 0 70px; }
   .hero-tag{
-    display:inline-block; font-size:12px; letter-spacing:2px; color:var(--cyan);
-    border:1px solid rgba(94,234,212,0.35); padding:5px 14px; border-radius:999px;
-    margin-bottom:26px; text-transform:uppercase;
-    background:rgba(94,234,212,0.05);
+    display:inline-flex; align-items:center; gap:6px; font-size:12px; letter-spacing:1.2px; color:var(--accent);
+    padding:5px 13px; border-radius:999px; margin-bottom:28px; text-transform:uppercase;
+    background:var(--accent-soft); font-weight:600;
   }
+  .hero-tag::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block; }
   .hero h1{
-    font-size:52px; margin:0 0 14px; font-weight:800; letter-spacing:1px;
-    background:linear-gradient(120deg,#fff 20%, var(--cyan) 55%, var(--violet) 90%);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+    font-size:46px; margin:0 0 16px; font-weight:700; letter-spacing:-0.5px; color:var(--text);
   }
-  .hero p.role{ font-size:17px; color:var(--text-dim); margin:0 0 30px; }
+  .hero p.role{ font-size:16.5px; color:var(--text-dim); margin:0 0 34px; max-width:520px; font-weight:400; }
   .hero p.role b{ color:var(--text); font-weight:600; }
-  .hero-links{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .hero-links{ display:flex; gap:12px; flex-wrap:wrap; }
   .btn{
     display:inline-flex; align-items:center; gap:8px;
-    padding:10px 20px; border-radius:10px; font-size:13.5px; text-decoration:none;
-    border:1px solid var(--card-border); color:var(--text); transition:all .2s;
+    padding:11px 22px; border-radius:10px; font-size:13.5px; text-decoration:none; font-weight:500;
+    border:1px solid var(--border); color:var(--text); transition:all .18s;
   }
-  .btn.primary{ background:linear-gradient(120deg, var(--cyan), var(--violet)); color:#07101a; font-weight:700; border:none; }
-  .btn:hover{ transform:translateY(-2px); border-color:var(--cyan); }
-  .btn.primary:hover{ opacity:0.9; }
+  .btn.primary{ background:var(--accent); color:#fff; border:none; }
+  .btn:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
+  .btn.primary:hover{ background:#0c8f62; color:#fff; }
 
   /* SECTION */
-  section{ padding:60px 0; border-top:1px solid rgba(255,255,255,0.05); }
-  .section-head{ display:flex; align-items:baseline; gap:12px; margin-bottom:32px; }
-  .section-num{ font-size:13px; color:var(--cyan); font-family:monospace; }
-  .section-title{ font-size:24px; font-weight:800; color:#fff; letter-spacing:0.5px; }
+  section{ padding:56px 0; border-top:1px solid var(--border-soft); }
+  .section-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:30px; }
+  .section-num{ font-size:12.5px; color:var(--accent); font-family:monospace; font-weight:600; }
+  .section-title{ font-size:21px; font-weight:700; color:var(--text); letter-spacing:-0.2px; }
 
   /* ABOUT */
-  .about-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .about-grid{ display:grid; grid-template-columns:1fr; gap:14px; }
   .strength-card{
-    background:var(--card); border:1px solid var(--card-border); border-radius:14px;
-    padding:18px 20px; transition:border-color .2s, transform .2s;
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:20px 22px; transition:border-color .2s, box-shadow .2s;
   }
-  .strength-card:hover{ border-color:rgba(94,234,212,0.4); transform:translateY(-2px); }
-  .strength-card b{ color:var(--cyan); display:block; margin-bottom:4px; font-size:14.5px; }
+  .strength-card:hover{ border-color:#c9ede0; box-shadow:0 4px 18px rgba(14,164,114,0.08); }
+  .strength-card b{ color:var(--text); display:block; margin-bottom:5px; font-size:14.5px; font-weight:600; }
+  .strength-card b::before{ content:"— "; color:var(--accent); }
   .strength-card p{ margin:0; color:var(--text-dim); font-size:13.5px; }
 
   /* EDU + SKILLS grid */
-  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   @media (max-width:720px){ .two-col{ grid-template-columns:1fr; } }
-  .info-card{ background:var(--card); border:1px solid var(--card-border); border-radius:14px; padding:22px; }
-  .info-card h4{ margin:0 0 14px; font-size:14px; color:var(--cyan); letter-spacing:1px; text-transform:uppercase; }
-  .edu-row{ margin-bottom:14px; }
+  .info-card{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:24px; }
+  .info-card h4{ margin:0 0 16px; font-size:12.5px; color:var(--text-faint); letter-spacing:1.2px; text-transform:uppercase; font-weight:600; }
+  .edu-row{ margin-bottom:16px; }
   .edu-row:last-child{ margin-bottom:0; }
-  .edu-row .school{ font-weight:700; color:#fff; font-size:14.5px; }
-  .edu-row .detail{ font-size:12.5px; color:var(--text-dim); }
+  .edu-row .school{ font-weight:600; color:var(--text); font-size:14.5px; }
+  .edu-row .detail{ font-size:12.5px; color:var(--text-dim); margin-top:2px; }
   .tags{ display:flex; flex-wrap:wrap; gap:8px; }
   .tag{
-    font-size:12px; padding:5px 11px; border-radius:999px;
-    background:rgba(167,139,250,0.1); color:var(--violet); border:1px solid rgba(167,139,250,0.25);
+    font-size:12px; padding:6px 12px; border-radius:8px;
+    background:var(--accent-soft); color:var(--accent); font-weight:500;
   }
-  .skill-line{ margin-bottom:10px; font-size:13px; color:var(--text-dim); }
-  .skill-line b{ color:var(--text); }
+  .skill-line{ margin-bottom:11px; font-size:13px; color:var(--text-dim); }
+  .skill-line:last-child{ margin-bottom:0; }
+  .skill-line b{ color:var(--text); font-weight:600; }
 
   /* TIMELINE / EXPERIENCE */
   .entry{
-    background:var(--card); border:1px solid var(--card-border); border-radius:16px;
-    padding:26px 28px; margin-bottom:22px; position:relative; overflow:hidden;
+    background:var(--card); border:1px solid var(--border); border-radius:16px;
+    padding:28px 30px; margin-bottom:20px;
   }
-  .entry::before{
-    content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
-    background:linear-gradient(180deg, var(--cyan), var(--violet));
-  }
-  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
-  .entry-org{ font-size:17px; font-weight:800; color:#fff; }
-  .entry-role{ font-size:12.5px; color:var(--cyan); margin-left:10px; font-weight:600; }
+  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--border-soft); }
+  .entry-org{ font-size:16.5px; font-weight:700; color:var(--text); }
+  .entry-role{ font-size:12.5px; color:var(--accent); margin-left:10px; font-weight:500; }
   .entry-date{ font-size:12px; color:var(--text-faint); font-family:monospace; }
-  .entry ul{ margin:0; padding-left:18px; }
-  .entry li{ font-size:13.5px; color:var(--text-dim); margin-bottom:8px; }
+  .entry ul{ margin:0; padding-left:0; list-style:none; }
+  .entry li{ font-size:13.5px; color:var(--text-dim); margin-bottom:12px; padding-left:20px; position:relative; }
   .entry li:last-child{ margin-bottom:0; }
-  .entry li b{ color:var(--text); }
-  .entry li .num{ color:var(--cyan); font-weight:700; }
+  .entry li::before{ content:"·"; position:absolute; left:4px; top:0; color:var(--accent); font-weight:700; font-size:18px; }
+  .entry li b{ color:var(--text); font-weight:600; }
+  .entry li .num{ color:var(--accent); font-weight:700; }
 
   /* PAPERS */
   .paper-card{
-    background:var(--card); border:1px solid var(--card-border); border-radius:14px;
-    padding:20px 22px; margin-bottom:14px;
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:22px 24px; margin-bottom:14px;
   }
-  .paper-title{ font-size:14.5px; font-weight:700; color:#fff; margin-bottom:6px; }
-  .paper-meta{ font-size:12.5px; color:var(--text-dim); margin-top:4px; }
+  .paper-title{ font-size:14.5px; font-weight:700; color:var(--text); margin-bottom:8px; }
+  .paper-meta{ font-size:12.5px; color:var(--text-dim); margin-top:5px; }
   .badge{
-    display:inline-block; font-size:11px; font-weight:700; padding:2px 9px; border-radius:6px;
-    background:rgba(94,234,212,0.15); color:var(--cyan); margin-left:6px;
+    display:inline-block; font-size:11px; font-weight:700; padding:3px 10px; border-radius:6px;
+    background:var(--accent-soft); color:var(--accent); margin-left:6px;
   }
-  .badge.gray{ background:rgba(124,138,163,0.15); color:var(--text-dim); }
+  .badge.gray{ background:#f1f1ee; color:var(--text-dim); }
 
   /* HONORS */
   .honor-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .honor-pill{
-    background:var(--card); border:1px solid var(--card-border); border-radius:12px;
-    padding:14px 20px; font-size:13.5px; color:var(--text); display:flex; align-items:center; gap:10px;
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    padding:15px 22px; font-size:13.5px; color:var(--text); display:flex; align-items:center; gap:10px; font-weight:500;
   }
-  .honor-pill .icon{ color:var(--violet); font-size:16px; }
+  .honor-pill .icon{ color:var(--accent); font-size:15px; }
 
   /* FOOTER */
-  footer{ padding:50px 0 60px; text-align:center; }
-  footer .contact-row{ display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin-bottom:20px; }
+  footer{ padding:50px 0 70px; text-align:center; }
+  footer .contact-row{ display:flex; justify-content:center; gap:28px; flex-wrap:wrap; margin-bottom:22px; }
   footer .contact-row a, footer .contact-row span{ color:var(--text-dim); font-size:13.5px; text-decoration:none; }
-  footer .contact-row a:hover{ color:var(--cyan); }
-  footer .copyright{ color:var(--text-faint); font-size:12px; }
+  footer .contact-row a:hover{ color:var(--accent); }
+  footer .copyright{ color:var(--text-faint); font-size:11.5px; }
 
   @media (max-width:600px){
-    .hero h1{ font-size:36px; }
+    .hero h1{ font-size:34px; }
     .entry{ padding:20px; }
-    .nav-links{ gap:12px; }
+    .nav-links{ gap:14px; }
     .nav-links a{ font-size:11.5px; }
   }
 </style>
 </head>
 <body>
-
-<div class="bg-grid"></div>
-<div class="bg-glow one"></div>
-<div class="bg-glow two"></div>
 
 <nav>
   <div class="nav-inner">
@@ -286,13 +266,13 @@
     <div class="section-head"><span class="section-num">04</span><span class="section-title">学术成果</span></div>
     <div class="paper-card">
       <div class="paper-title">A Dual Correction Guarantee Mechanism for Numerical Label Noise</div>
-      <div class="paper-meta">第一作者 · 已发表于 <b style="color:#dbe4f0;">IEEE Transactions on Knowledge and Data Engineering（IEEE TKDE）</b><span class="badge">影响因子 10.4</span></div>
+      <div class="paper-meta">第一作者 · 已发表于 <b style="color:#22262b;">IEEE Transactions on Knowledge and Data Engineering（IEEE TKDE）</b><span class="badge">影响因子 10.4</span></div>
       <div class="paper-meta">JCR一区 · CCF-A类 · 数据挖掘 / 知识工程领域国际顶级期刊</div>
       <div class="paper-meta">研究方向：面向数值标签噪声的双重校正保障机制，结合原型近邻邻域识别与异方差损失贝叶斯神经网络协同训练，在多个数据集上达到SOTA性能</div>
     </div>
     <div class="paper-card">
       <div class="paper-title">Dynamic Numerical Label Correction Driven by Estimation Uncertainty</div>
-      <div class="paper-meta">第一作者 · 在投 <b style="color:#dbe4f0;">ACM Transactions on Knowledge Discovery from Data（TKDD）</b><span class="badge gray">CCF-B</span></div>
+      <div class="paper-meta">第一作者 · 在投 <b style="color:#22262b;">ACM Transactions on Knowledge Discovery from Data（TKDD）</b><span class="badge gray">CCF-B</span></div>
     </div>
   </section>
 
@@ -328,8 +308,8 @@
   <section id="honors">
     <div class="section-head"><span class="section-num">07</span><span class="section-title">荣誉奖项</span></div>
     <div class="honor-row">
-      <div class="honor-pill"><span class="icon">◆</span>2025-2026学年三等学业奖学金</div>
-      <div class="honor-pill"><span class="icon">◆</span>2024-2025学年山西大学足球比赛第四名</div>
+      <div class="honor-pill"><span class="icon">✦</span>2025-2026学年三等学业奖学金</div>
+      <div class="honor-pill"><span class="icon">✦</span>2024-2025学年山西大学足球比赛第四名</div>
     </div>
   </section>
 
