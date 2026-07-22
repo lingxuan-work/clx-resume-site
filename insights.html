@@ -69,12 +69,6 @@
   .layer-title{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:18px; font-weight:600; color:var(--ink); }
   .layer-card p{ font-size:13.5px; margin-bottom:0; }
 
-  .practice-list{ margin:26px 0 0; padding:0; list-style:none; }
-  .practice-list li{ padding:18px 0; border-top:1px solid var(--hair); font-size:13.5px; color:var(--ink-soft); position:relative; padding-left:24px; }
-  .practice-list li:first-child{ border-top:none; }
-  .practice-list li::before{ content:"❀"; position:absolute; left:0; top:19px; color:var(--terracotta); font-size:10px; }
-  .practice-list li b{ color:var(--ink); font-weight:500; }
-
   .pull-quote{ background:var(--terracotta-soft); border-radius:4px; padding:32px 34px; margin:36px 0; text-align:center; }
   .pull-quote p{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:19px; font-style:italic; color:var(--ink); margin:0; text-align:center; line-height:1.65; }
 
@@ -117,14 +111,14 @@
   <div class="divider">· · ·</div>
 
   <article>
-    <p class="lede">"AI 不会取代 HR，但会取代不会用 AI 的 HR。"<br>这不是一句口号，而是我在 Stable AI 做技术招聘这几个月，越来越确信的一件事。</p>
+    <p class="lede">"AI 不会取代 HR，但会取代不会用 AI 的 HR。"<br>这不是一句口号，而是我做技术招聘以来，越来越确信的一件事。</p>
   </article>
 
   <article>
     <span class="sec-label">引言</span>
     <h2>招聘的"确定性"部分，正在被AI接管</h2>
     <p>过去做招聘，很大一部分精力花在<b>重复且确定性高</b>的工作上：手动筛简历、整理招聘漏斗数据、写岗位JD初稿、跟进候选人进度。这些工作占用了大量时间，却并不真正需要"人"的判断。</p>
-    <p>我自己在 Stable AI 实习期间，用 Claude Code 独立开发了简历初筛工具和招聘数据看板——把"人工每周手动导出Excel做透视表"这种事，变成大模型自动打分、指标自动更新。这不是为了炫技，而是因为我切身体会到：<em>这部分工作交给AI，比交给人更快、更准、更不容易疲劳出错</em>。这也是我认为AI时代对HR最直接的改变——效率层的工作会被大规模AI化，这个趋势不可逆。</p>
+    <p>我自己在实践中越来越体会到：<em>这部分工作交给AI，比交给人更快、更准、更不容易疲劳出错</em>。这也是我认为AI时代对HR最直接的改变——效率层的工作会被大规模AI化，这个趋势不可逆。</p>
   </article>
 
   <article>
@@ -137,7 +131,7 @@
   <div class="layer-grid wrap" style="max-width:720px; margin-left:auto; margin-right:auto; padding:0 0;">
     <div class="layer-card efficiency">
       <div class="layer-head"><span class="layer-num">01</span><span class="layer-title">效率层 — 交给AI</span></div>
-      <p>简历初筛、数据看板、JD初稿生成、面试安排提醒。这一层的目标是<b>把人力从重复劳动里解放出来</b>，我在 Stable AI 用大模型和自动化管道做的两款工具，就是这一层的实践。</p>
+      <p>简历初筛、数据看板、JD初稿生成、面试安排提醒。这一层的目标是<b>把人力从重复劳动里解放出来</b>，交给大模型和自动化管道去处理。</p>
     </div>
     <div class="layer-card judgment">
       <div class="layer-head"><span class="layer-num">02</span><span class="layer-title">判断层 — 人机协同，人主导</span></div>
@@ -148,16 +142,6 @@
       <p>薪酬谈判、Offer撮合、员工关系沟通、新人融入与转正评估。这些工作的核心是<b>信任的建立</b>，需要共情、需要临场读懂对方的顾虑，是HR岗位里最"人"的部分，也是我认为未来最不会被替代的核心竞争力。</p>
     </div>
   </div>
-
-  <article>
-    <span class="sec-label">我的实践</span>
-    <h2>不只是想法，也在自己动手验证</h2>
-    <ul class="practice-list">
-      <li><b>简历初筛工具：</b>基于飞书开放平台，接入大模型API，根据岗位JD自动抽取候选人关键信息并计算匹配度打分，累计处理简历800份，覆盖5个招聘岗位</li>
-      <li><b>招聘数据看板：</b>打通招聘系统数据源，用Python/SQL搭建自动化管道，把8个核心招聘指标从"人工每周导表"变成"自动定时更新"</li>
-      <li><b>主动寻访：</b>在AI筛选之外，我依然坚持做Cold Call——用脉脉主动寻访到一位18年经验的算法团队Leader并推动入职，这类高价值候选人，AI目前还找不到、也谈不动</li>
-    </ul>
-  </article>
 
   <div class="pull-quote">
     <p>AI 处理"能不能匹配"，人负责判断"值不值得、合不合适"。<br>这是我理解的AI时代HR分工。</p>
