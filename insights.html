@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI时代的HR · 崔羚炫的思考</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fdfbf7;
+    --bg-soft:#faeeeb;
+    --ink:#1f1e1b;
+    --ink-soft:#44403c;
+    --muted:#8a8378;
+    --hair:#e7ded2;
+    --terracotta:#c55344;
+    --terracotta-soft:#fff3ef;
+    --sage:#40815b;
+    --sage-soft:#f0f5f1;
+    --gold:#c98a3e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink-soft);
+    font-family:"Inter","Noto Sans SC",sans-serif;
+    font-weight:300;
+    line-height:1.95;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 28px; }
+
+  nav{ position:sticky; top:0; z-index:10; background:rgba(253,251,247,0.85); backdrop-filter:blur(8px); border-bottom:1px solid var(--hair); }
+  .nav-inner{ max-width:720px; margin:0 auto; padding:22px 28px; display:flex; justify-content:space-between; align-items:center; }
+  .back-link{ color:var(--ink-soft); text-decoration:none; font-size:12.5px; letter-spacing:0.5px; display:flex; align-items:center; gap:6px; transition:color .2s; }
+  .back-link:hover{ color:var(--terracotta); }
+  .brand{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:16px; font-weight:500; color:var(--muted); letter-spacing:0.5px; }
+
+  .hero{ padding:90px 0 60px; text-align:center; }
+  .hero .kicker{ font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+  .hero .kicker::before, .hero .kicker::after{ content:"— "; color:var(--terracotta); }
+  .hero .kicker::after{ content:" —"; }
+  .hero h1{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:44px; font-weight:600; font-style:italic; color:var(--ink); margin:0 0 20px; line-height:1.25; }
+  .hero .sub{ font-size:15px; color:var(--muted); max-width:480px; margin:0 auto; }
+
+  .divider{ text-align:center; color:var(--hair); font-size:18px; letter-spacing:14px; margin:0 auto; }
+
+  article{ padding:54px 0; }
+  article:first-of-type{ padding-top:10px; }
+  .lede{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:21px; font-style:italic; color:var(--ink); line-height:1.75; text-align:center; margin-bottom:0; }
+
+  .sec-label{ font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--terracotta); font-weight:600; margin-bottom:14px; display:block; }
+  h2{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:27px; font-weight:600; color:var(--ink); margin:0 0 22px; line-height:1.4; }
+  p{ font-size:14.5px; color:var(--ink-soft); margin:0 0 18px; text-align:justify; }
+  p:last-child{ margin-bottom:0; }
+  p b{ color:var(--ink); font-weight:500; }
+  p em{ color:var(--terracotta); font-style:italic; font-weight:500; }
+
+  .layer-grid{ display:flex; flex-direction:column; gap:14px; margin-top:30px; }
+  .layer-card{ border:1px solid var(--hair); border-radius:4px; padding:24px 26px; background:#fff; }
+  .layer-card.efficiency{ border-left:3px solid var(--gold); }
+  .layer-card.judgment{ border-left:3px solid var(--terracotta); }
+  .layer-card.relation{ border-left:3px solid var(--sage); }
+  .layer-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:10px; }
+  .layer-num{ font-family:"Cormorant Garamond",serif; font-size:22px; font-style:italic; color:var(--muted); }
+  .layer-title{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:18px; font-weight:600; color:var(--ink); }
+  .layer-card p{ font-size:13.5px; margin-bottom:0; }
+
+  .practice-list{ margin:26px 0 0; padding:0; list-style:none; }
+  .practice-list li{ padding:18px 0; border-top:1px solid var(--hair); font-size:13.5px; color:var(--ink-soft); position:relative; padding-left:24px; }
+  .practice-list li:first-child{ border-top:none; }
+  .practice-list li::before{ content:"❀"; position:absolute; left:0; top:19px; color:var(--terracotta); font-size:10px; }
+  .practice-list li b{ color:var(--ink); font-weight:500; }
+
+  .pull-quote{ background:var(--terracotta-soft); border-radius:4px; padding:32px 34px; margin:36px 0; text-align:center; }
+  .pull-quote p{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:19px; font-style:italic; color:var(--ink); margin:0; text-align:center; line-height:1.65; }
+
+  footer{ padding:60px 0 100px; text-align:center; border-top:1px solid var(--hair); margin-top:20px; }
+  footer .sign{ font-family:"Great Vibes", cursive; font-size:34px; color:var(--terracotta); margin-bottom:20px; }
+  footer .back-btn{
+    display:inline-flex; align-items:center; gap:8px; padding:11px 26px; border-radius:2px;
+    font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none;
+    border:1px solid var(--ink); color:var(--ink); transition:all .25s;
+  }
+  footer .back-btn:hover{ background:var(--ink); color:#fff; }
+  footer .copyright{ color:var(--hair); font-size:11px; letter-spacing:1px; margin-top:30px; }
+
+  @media (max-width:600px){
+    .hero h1{ font-size:30px; }
+    .hero{ padding:60px 0 40px; }
+    .lede{ font-size:18px; }
+    h2{ font-size:22px; }
+    .pull-quote p{ font-size:16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="back-link" href="index.html">← 返回首页</a>
+    <div class="brand">崔羚炫 · HRBP</div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="kicker">个人思考 · Reflection</div>
+    <h1>AI时代，<br>HR岗位应该怎么做？</h1>
+    <p class="sub">写给正在转型技术招聘、也在思考这个问题的自己</p>
+  </section>
+
+  <div class="divider">· · ·</div>
+
+  <article>
+    <p class="lede">"AI 不会取代 HR，但会取代不会用 AI 的 HR。"<br>这不是一句口号，而是我在 Stable AI 做技术招聘这几个月，越来越确信的一件事。</p>
+  </article>
+
+  <article>
+    <span class="sec-label">引言</span>
+    <h2>招聘的"确定性"部分，正在被AI接管</h2>
+    <p>过去做招聘，很大一部分精力花在<b>重复且确定性高</b>的工作上：手动筛简历、整理招聘漏斗数据、写岗位JD初稿、跟进候选人进度。这些工作占用了大量时间，却并不真正需要"人"的判断。</p>
+    <p>我自己在 Stable AI 实习期间，用 Claude Code 独立开发了简历初筛工具和招聘数据看板——把"人工每周手动导出Excel做透视表"这种事，变成大模型自动打分、指标自动更新。这不是为了炫技，而是因为我切身体会到：<em>这部分工作交给AI，比交给人更快、更准、更不容易疲劳出错</em>。这也是我认为AI时代对HR最直接的改变——效率层的工作会被大规模AI化，这个趋势不可逆。</p>
+  </article>
+
+  <article>
+    <span class="sec-label">核心观点</span>
+    <h2>但招聘的"不确定性"部分，AI暂时替代不了</h2>
+    <p>真正难的招聘工作，从来不是"筛出100份简历里技术关键词匹配的20份"，而是：这个候选人的技术深度是否真的匹配团队现在的阶段？他愿不愿意接受这个薪酬和这个不确定性很高的岗位？他跟这个团队的合作方式合不合得来？</p>
+    <p>这些判断依赖的是<b>对业务的理解、对人的观察、以及谈判中的临场应变</b>——这恰恰是AI工具目前做不到、也最不该被替代的部分。我把这个理解总结成了一个三层模型：</p>
+  </article>
+
+  <div class="layer-grid wrap" style="max-width:720px; margin-left:auto; margin-right:auto; padding:0 0;">
+    <div class="layer-card efficiency">
+      <div class="layer-head"><span class="layer-num">01</span><span class="layer-title">效率层 — 交给AI</span></div>
+      <p>简历初筛、数据看板、JD初稿生成、面试安排提醒。这一层的目标是<b>把人力从重复劳动里解放出来</b>，我在 Stable AI 用大模型和自动化管道做的两款工具，就是这一层的实践。</p>
+    </div>
+    <div class="layer-card judgment">
+      <div class="layer-head"><span class="layer-num">02</span><span class="layer-title">判断层 — 人机协同，人主导</span></div>
+      <p>技术深度评估、人才画像构建、候选人与岗位的真实匹配度判断。AI可以给参考意见，但<b>最终判断必须是人</b>——尤其是技术招聘，这也是我认为技术背景对HR而言最大的价值所在：能读懂JD背后的真实需求，而不只是关键词匹配。</p>
+    </div>
+    <div class="layer-card relation">
+      <div class="layer-head"><span class="layer-num">03</span><span class="layer-title">关系层 — AI暂时无法替代</span></div>
+      <p>薪酬谈判、Offer撮合、员工关系沟通、新人融入与转正评估。这些工作的核心是<b>信任的建立</b>，需要共情、需要临场读懂对方的顾虑，是HR岗位里最"人"的部分，也是我认为未来最不会被替代的核心竞争力。</p>
+    </div>
+  </div>
+
+  <article>
+    <span class="sec-label">我的实践</span>
+    <h2>不只是想法，也在自己动手验证</h2>
+    <ul class="practice-list">
+      <li><b>简历初筛工具：</b>基于飞书开放平台，接入大模型API，根据岗位JD自动抽取候选人关键信息并计算匹配度打分，累计处理简历800份，覆盖5个招聘岗位</li>
+      <li><b>招聘数据看板：</b>打通招聘系统数据源，用Python/SQL搭建自动化管道，把8个核心招聘指标从"人工每周导表"变成"自动定时更新"</li>
+      <li><b>主动寻访：</b>在AI筛选之外，我依然坚持做Cold Call——用脉脉主动寻访到一位18年经验的算法团队Leader并推动入职，这类高价值候选人，AI目前还找不到、也谈不动</li>
+    </ul>
+  </article>
+
+  <div class="pull-quote">
+    <p>AI 处理"能不能匹配"，人负责判断"值不值得、合不合适"。<br>这是我理解的AI时代HR分工。</p>
+  </div>
+
+  <article>
+    <span class="sec-label">结语</span>
+    <h2>我想做的，是被AI放大的HR，而不是被AI替代的HR</h2>
+    <p>我的转型逻辑很简单：技术背景让我在<b>判断层</b>比传统HR更有优势，工程能力让我在<b>效率层</b>能自己动手把工具搭出来，而不是等着被动使用别人给的系统。剩下的<b>关系层</b>，需要在实践里慢慢磨练——这也是我现在最看重、投入最多精力去学习的部分。</p>
+    <p>这篇思考会持续更新，它更像是我对自己职业方向的一份阶段性回答。</p>
+  </article>
+
+  <footer>
+    <div class="sign">Lingxuan</div>
+    <a class="back-btn" href="index.html">← 返回首页</a>
+    <div class="copyright">© 2026 崔羚炫</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

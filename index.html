@@ -65,6 +65,20 @@
   .btn:hover{ background:var(--ink); color:#fff; }
   .btn.primary:hover{ background:#a8402f; border-color:#a8402f; }
 
+  /* INSIGHT TEASER */
+  .insight-teaser{
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    max-width:480px; margin:46px auto 0; padding:18px 24px;
+    border:1px solid var(--hair); border-radius:3px; background:var(--terracotta-soft);
+    text-decoration:none; transition:all .25s;
+  }
+  .insight-teaser:hover{ border-color:var(--terracotta); transform:translateY(-1px); }
+  .insight-teaser-text{ display:flex; flex-direction:column; gap:5px; text-align:left; }
+  .insight-teaser-label{ font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--terracotta); font-weight:600; }
+  .insight-teaser-title{ font-family:"Cormorant Garamond","Noto Serif SC",serif; font-size:16px; font-weight:600; font-style:italic; color:var(--ink); }
+  .insight-teaser-arrow{ font-size:20px; color:var(--terracotta); flex-shrink:0; transition:transform .25s; }
+  .insight-teaser:hover .insight-teaser-arrow{ transform:translateX(4px); }
+
   /* SECTION */
   section{ padding:70px 0; }
   .divider{ text-align:center; color:var(--hair); font-size:20px; letter-spacing:14px; }
@@ -133,6 +147,7 @@
     .hero h1{ font-size:64px; }
     .hero .role{ font-size:17px; }
     .entry-org{ font-size:18px; }
+    .insight-teaser{ flex-direction:column; align-items:flex-start; gap:10px; max-width:100%; }
   }
 </style>
 </head>
@@ -146,6 +161,7 @@
       <a href="#experience">经历</a>
       <a href="#projects">项目</a>
       <a href="#papers">学术</a>
+      <a href="insights.html">AI与HR思考</a>
       <a href="#contact">联系</a>
     </div>
   </div>
@@ -161,6 +177,14 @@
       <a class="btn primary" href="#contact">联系我</a>
       <a class="btn" href="#experience">查看经历</a>
     </div>
+
+    <a class="insight-teaser" href="insights.html">
+      <div class="insight-teaser-text">
+        <span class="insight-teaser-label">延伸阅读 · 崔羚炫的思考</span>
+        <span class="insight-teaser-title">AI时代，HR岗位应该怎么做？</span>
+      </div>
+      <span class="insight-teaser-arrow">→</span>
+    </a>
   </section>
 
   <div class="divider">· · ·</div>
